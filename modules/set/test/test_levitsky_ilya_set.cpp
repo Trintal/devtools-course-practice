@@ -1,7 +1,8 @@
 // Copyright 2018 Levitsky Ilya
 
 #include <gtest/gtest.h>
-
+#include <string>
+#include <vector>
 #include "include/set.h"
 
 TEST(Levitsky_Ilya_setTest, Can_Create_Set) {
@@ -148,7 +149,7 @@ TEST(Levitsky_Ilya_setTest, Can_Copy) {
     EXPECT_EQ(5, B.GetN(5));
 }
 class SetTest : public ::testing::Test {
-protected:
+ protected:
     // virtual void SetUp() {}
 
     void Act(vector<string> args_) {
@@ -169,7 +170,7 @@ protected:
         EXPECT_TRUE(RE::PartialMatch(output_, RE(expected)));
     }
 
-private:
+ private:
     Set A;
     string output_;
 };
