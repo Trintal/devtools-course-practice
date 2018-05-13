@@ -3,10 +3,6 @@
 #include <gtest/gtest.h>
 #include "include/set.h"
 
-class Levitsky_Ilya_setTest : public ::testing::Test{
- protected:
-};
-
 TEST(Levitsky_Ilya_setTest, Can_Create_Set) {
   // Arrange
   set A;
