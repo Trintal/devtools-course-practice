@@ -3,7 +3,7 @@
 #include <gtest/gtest.h>
 #include "include/set.h"
 
-class Levitsky_Ilya_setTest : public:resting::Test{
+class Levitsky_Ilya_setTest : public ::testing::Test{
  protected:
 };
 
