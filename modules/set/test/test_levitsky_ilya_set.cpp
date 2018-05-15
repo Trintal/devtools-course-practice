@@ -147,3 +147,20 @@ TEST(Levitsky_Ilya_setTest, Can_Copy) {
     // Assert
     EXPECT_EQ(5, B.GetN(5));
 }
+
+TEST(Levitsky_Ilya_setTest, Can_Assign) {
+    // Arrange
+    set A;
+    set B;
+
+    // Act
+    A.Insert(5);
+    A.Insert(2);
+	B.Insert(3);
+    B = A;
+
+    // Assert
+    EXPECT_EQ(5, B.GetN(5));
+    EXPECT_EQ(2, B.GetN(2));
+    EXPECT_EQ(0, B.GetN(3));
+}
