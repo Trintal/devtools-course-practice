@@ -9,16 +9,16 @@ class bitfield{
     int n;
     int sizeU;
     int k;
-    int Mem_index(int);
-    int Mask(int);
+    int Mem_index(int k);
+    int Mask(int k);
 
  public:
     explicit bitfield(int _SizeU = 10);
     bitfield(bitfield&);
     ~bitfield(void);
 
-    void setbit(int);
-    int getbit(int);
+    void setbit(int k);
+    int getbit(int k);
 
     bitfield operator ~();
     bitfield operator &(const bitfield&);
