@@ -14,11 +14,11 @@ class bitfield{
 
  public:
     explicit bitfield(int _SizeU = 10);
+    bitfield(bitfield&);
     ~bitfield(void);
 
     void setbit(int k);
     int getbit(int k);
-    void Clearbit(int k);
 
     bitfield operator ~();
     bitfield operator &(const bitfield&);
