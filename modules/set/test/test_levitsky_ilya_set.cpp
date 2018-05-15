@@ -156,7 +156,7 @@ TEST(Levitsky_Ilya_setTest, Can_Assign) {
     // Act
     A.Insert(5);
     A.Insert(2);
-	B.Insert(3);
+    B.Insert(3);
     B = A;
 
     // Assert
