@@ -13,7 +13,7 @@ bitfield::bitfield(int _SizeU) {
     }
 }
 
-bitfield::bitfield(const bitfield& tmp) {
+bitfield::bitfield(bitfield& tmp) {
     if (sizeU != 0) {
         sizeU = tmp.sizeU;
         n = tmp.n;
