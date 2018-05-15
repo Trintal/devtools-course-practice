@@ -124,16 +124,21 @@ TEST(Levitsky_Ilya_setTest, Dif_Disjunctio_Sets) {
     set C;
 
     // Act
+    A.Insert(1);
+    A.Insert(2);
+    A.Insert(3);
     A.Insert(4);
-    B.Insert(7);
-    B.Insert(5);
+    A.Insert(5);
+    B.Insert(2);
+    B.Insert(4);
+    B.Insert(6);
 
     C = A + B;
 
     // Assert
+    EXPECT_EQ(2, C.GetN(2));
     EXPECT_EQ(4, C.GetN(4));
-    EXPECT_EQ(7, C.GetN(7));
-    EXPECT_EQ(5, C.GetN(5));
+    EXPECT_EQ(6, C.GetN(6));
 }
 
 TEST(Levitsky_Ilya_setTest, Can_Copy) {
@@ -146,21 +151,4 @@ TEST(Levitsky_Ilya_setTest, Can_Copy) {
 
     // Assert
     EXPECT_EQ(5, B.GetN(5));
-}
-
-TEST(Levitsky_Ilya_setTest, Can_Assign) {
-    // Arrange
-    set A;
-    set B;
-
-    // Act
-    A.Insert(5);
-    A.Insert(2);
-    B.Insert(3);
-    B = A;
-
-    // Assert
-    EXPECT_EQ(5, B.GetN(5));
-    EXPECT_EQ(2, B.GetN(2));
-    EXPECT_EQ(0, B.GetN(3));
 }
