@@ -24,6 +24,7 @@ bitfield::bitfield(const bitfield& tmp) {
     }
 }
 
+
 bitfield::~bitfield() {
     delete[] arr;
 }
