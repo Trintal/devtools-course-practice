@@ -18,7 +18,6 @@ class bitfield{
 
     void setbit(int k);
     int getbit(int k);
-    void Clearbit(int k);
 
     bitfield operator ~();
     bitfield operator &(const bitfield&);

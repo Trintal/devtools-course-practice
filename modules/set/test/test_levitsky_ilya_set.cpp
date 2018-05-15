@@ -1,7 +1,6 @@
 // Copyright 2018 Levitsky Ilya
 
 #include <gtest/gtest.h>
-
 #include "include/set.h"
 
 TEST(Levitsky_Ilya_setTest, Can_Create_Set) {
