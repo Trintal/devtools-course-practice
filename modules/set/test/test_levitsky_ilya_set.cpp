@@ -155,8 +155,8 @@ TEST(Levitsky_Ilya_setTest, Can_Copy) {
 
 TEST(Levitsky_Ilya_setTest, Test_BF) {
     // Arrange
-    bitfield X(10);
-    bitfield Y(10);
+    bitfield X(100);
+    bitfield Y(X);
 
     // Act
     Y = X;
