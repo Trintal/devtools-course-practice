@@ -161,5 +161,5 @@ TEST(Levitsky_Ilya_setTest, Test_BF) {
     bitfield B(A);
 
     // Assert
-    EXPECT_EQ(0, B.getbit(5));
+    EXPECT_EQ(0, A.getbit(5));
 }
