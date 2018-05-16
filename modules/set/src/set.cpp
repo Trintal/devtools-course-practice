@@ -19,14 +19,10 @@ void set::Insert(int k) {
 }
 
 int set::GetN(int k) {
-    int isEmpty = 1;
     for (int i = 1; i <= MaxPow; i++) {
         if (Get(k)) {
             return k;
         }
-    }
-    if (isEmpty) {
-        return 0;
     }
 }
 
