@@ -155,11 +155,11 @@ TEST(Levitsky_Ilya_setTest, Can_Copy) {
 
 TEST(Levitsky_Ilya_setTest, Test_BF) {
     // Arrange
-    bitfield A;
+    bitfield X;
 
     // Act
-    bitfield B(A);
+    bitfield Y(X);
 
     // Assert
-    EXPECT_EQ(0, A.getbit(5));
+    EXPECT_EQ(0, X.getbit(3));
 }
