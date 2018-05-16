@@ -10,7 +10,7 @@ class set{
     bitfield BF;
 
  public:
-    explicit set(int mp = 10);
+    explicit set(int mp = 100);
     set(set&);
 
     void Insert(int k);
