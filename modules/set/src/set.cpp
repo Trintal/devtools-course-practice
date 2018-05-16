@@ -24,6 +24,7 @@ int set::GetN(int k) {
             return k;
         }
     }
+    return 0;
 }
 
 int set::Get(int k) {
