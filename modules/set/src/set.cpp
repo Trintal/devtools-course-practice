@@ -23,7 +23,6 @@ int set::GetN(int k) {
     for (int i = 1; i <= MaxPow; i++) {
         if (Get(k)) {
             return k;
-            isEmpty = 0;
         }
     }
     if (isEmpty) {
