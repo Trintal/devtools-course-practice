@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string>
+#include <sstream>
 
 #include "include/GeometryT.h"
 #include "include/Cone.h"
@@ -73,16 +74,21 @@ std::string GeometryT::operator()(int argc, const char** argv) {
         }
     }
 
-    if (argc == 3 && argv[1] == static_cast<char>"Cone") {
+    Cone cone;
+    Cylinder cyliner;
+    Sphere sphere;
+    Cube cube
+
+    if (argc == 3 && argv[1] == <char>("Cone")) {
         Cone cone(args.radius, args.height);
     }
-    if (argc == 3 && argv[1] == static_cast<char>"Cylinder") {
+    if (argc == 3 && argv[1] == <char>("Cylinder")) {
         Cylinder cyliner(args.radius, args.height);
     }
-    if (argc == 2 && argv[1] == static_cast<char>"Sphere") {
+    if (argc == 2 && argv[1] == <char>("Sphere")) {
         Sphere sphere(args.radius);
     }
-    if (argc == 2 && argv[1] == static_cast<char>"Cube") {
+    if (argc == 2 && argv[1] == <char>("Cube")) {
         Cube cube(args.radius);
     }
 
