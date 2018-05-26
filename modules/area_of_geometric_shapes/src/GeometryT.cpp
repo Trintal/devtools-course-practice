@@ -28,9 +28,9 @@ bool GeometryT::validateNumberOfArguments(int argc, const char** argv) {
     if (argc == 1) {
         help(argv[0]);
         return false;
-	} else if(argc > 4) {
+    } else if (argc > 4) {
         help(argv[0], "ERROR: Should be not more than 3");
-		return false;
+        return false;
     }
     return true;
 }
@@ -73,35 +73,35 @@ std::string GeometryT::operator()(int argc, const char** argv) {
         }
     }
 
-    if (argc == 3 && argv[1] == "Cone") {
-        Cone cone(radius, height);
+    if (argc == 3 && argv[1] == (char)"Cone") {
+        Cone cone(args.radius, args.height);
     }
-    if (argc == 3 && argv[1] == "Cylinder") {
-        Cylinder cyliner(radius, height);
+    if (argc == 3 && argv[1] == (char)"Cylinder") {
+        Cylinder cyliner(args.radius, args.height);
     }
-    if (argc == 2 && argv[1] == "Sphere") {
-        Sphere sphere(radius);
+    if (argc == 2 && argv[1] == (char)"Sphere") {
+        Sphere sphere(args.radius);
     }
-    if (argc == 2 && argv[1] == "Cube") {
-        Cube cube(radius);
+    if (argc == 2 && argv[1] == (char)"Cube") {
+        Cube cube(args.radius);
     }
 
     std::ostringstream stream;
 
     switch (argv[1]) {
-    case 'Cone':
+    case "Cone":
         res = cone.areaCone();
         stream << "Area of cone: " << res;
         break;
-    case 'Cylinder':
+    case "Cylinder":
         res = cylinder.areaCyl();
         stream << "Area of cylinder: " << res;
         break;
-    case 'Sphere':
+    case "Sphere":
         res = sphere.areaSph();
         stream << "Area of sphere: " << res;
         break;
-    case 'Cube':
+    case "Cube":
         try {
             res = cube.areaCube();
             stream << "Area of cube: " << res;
