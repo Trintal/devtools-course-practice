@@ -79,17 +79,17 @@ std::string GeometryT::operator()(int argc, const char** argv) {
     Sphere sphere;
 	Cube cube;
 
-    if (argc == 3 && argv[1] == ("Cone")) {
+    if (argc == 3 && argv[1] == static_cast<char*>("Cone")) {
         Cone cone(args.radius, args.height);
         res = cone.areaCone();
         stream << "Area of cone: " << res;
     }
-    if (argc == 3 && argv[1] == ("Cylinder")) {
+    if (argc == 3 && argv[1] == static_cast<char*>("Cylinder")) {
         Cylinder cyliner(args.radius, args.height);
         res = cylinder.areaCyl();
         stream << "Area of cylinder: " << res;
     }
-    if (argc == 2 && argv[1] == ("Sphere")) {
+    if (argc == 2 && argv[1] == static_cast<char*>("Sphere")) {
         Sphere sphere(args.radius);
         res = sphere.areaSph();
         stream << "Area of sphere: " << res;
