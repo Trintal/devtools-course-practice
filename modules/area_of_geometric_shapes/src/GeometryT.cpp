@@ -11,6 +11,8 @@
 #include "include/Cylinder.h"
 #include "include/Sphere.h"
 
+using namespace std;
+
 GeometryT::GeometryT() : message_("") {}
 
 void GeometryT::help(const char* appname, const char* message) {
@@ -77,19 +79,19 @@ std::string GeometryT::operator()(int argc, const char** argv) {
     Cone cone;
     Cylinder cyliner;
     Sphere sphere;
-	Cube cube;
+    Cube cube;
 
-    if (argc == 3 && argv[1] == static_cast<char*>("Cone")) {
+    if (argc == 3 && argv[1] == const<char*>("Cone")) {
         Cone cone(args.radius, args.height);
         res = cone.areaCone();
         stream << "Area of cone: " << res;
     }
-    if (argc == 3 && argv[1] == static_cast<char*>("Cylinder")) {
+    if (argc == 3 && argv[1] == const<char*>("Cylinder")) {
         Cylinder cyliner(args.radius, args.height);
         res = cylinder.areaCyl();
         stream << "Area of cylinder: " << res;
     }
-    if (argc == 2 && argv[1] == static_cast<char*>("Sphere")) {
+    if (argc == 2 && argv[1] == const<char*>("Sphere")) {
         Sphere sphere(args.radius);
         res = sphere.areaSph();
         stream << "Area of sphere: " << res;
@@ -102,20 +104,20 @@ std::string GeometryT::operator()(int argc, const char** argv) {
 
     std::ostringstream stream;
 
-    //switch (argv[1]) {
-    //case "Cone":
+    //  switch (argv[1]) {
+    //  case "Cone":
     //    res = cone.areaCone();
     //    stream << "Area of cone: " << res;
     //    break;
-    //case "Cylinder":
+    //  case "Cylinder":
     //    res = cylinder.areaCyl();
     //    stream << "Area of cylinder: " << res;
     //    break;
-    //case "Sphere":
+    //  case "Sphere":
     //    res = sphere.areaSph();
     //    stream << "Area of sphere: " << res;
     //    break;
-    //case "Cube":
+    //  case "Cube":
     //    try {
     //        res = cube.areaCube();
     //        stream << "Area of cube: " << res;
@@ -124,7 +126,7 @@ std::string GeometryT::operator()(int argc, const char** argv) {
     //    catch (std::string& str) {
     //        return str;
     //    }
-    //}
+    //  }
 
     message_ = stream.str();
 
