@@ -77,46 +77,54 @@ std::string GeometryT::operator()(int argc, const char** argv) {
     Cone cone;
     Cylinder cyliner;
     Sphere sphere;
-    Cube cube
+	Cube cube;
 
-    if (argc == 3 && argv[1] == <char>("Cone")) {
+    if (argc == 3 && argv[1] == ("Cone")) {
         Cone cone(args.radius, args.height);
+        res = cone.areaCone();
+        stream << "Area of cone: " << res;
     }
-    if (argc == 3 && argv[1] == <char>("Cylinder")) {
+    if (argc == 3 && argv[1] == ("Cylinder")) {
         Cylinder cyliner(args.radius, args.height);
+        res = cylinder.areaCyl();
+        stream << "Area of cylinder: " << res;
     }
-    if (argc == 2 && argv[1] == <char>("Sphere")) {
+    if (argc == 2 && argv[1] == ("Sphere")) {
         Sphere sphere(args.radius);
+        res = sphere.areaSph();
+        stream << "Area of sphere: " << res;
     }
-    if (argc == 2 && argv[1] == <char>("Cube")) {
+    if (argc == 2 && argv[1] == ("Cube")) {
         Cube cube(args.radius);
+        res = cube.areaCube();
+        stream << "Area of cube: " << res;
     }
 
     std::ostringstream stream;
 
-    switch (argv[1]) {
-    case "Cone":
-        res = cone.areaCone();
-        stream << "Area of cone: " << res;
-        break;
-    case "Cylinder":
-        res = cylinder.areaCyl();
-        stream << "Area of cylinder: " << res;
-        break;
-    case "Sphere":
-        res = sphere.areaSph();
-        stream << "Area of sphere: " << res;
-        break;
-    case "Cube":
-        try {
-            res = cube.areaCube();
-            stream << "Area of cube: " << res;
-            break;
-        }
-        catch (std::string& str) {
-            return str;
-        }
-    }
+    //switch (argv[1]) {
+    //case "Cone":
+    //    res = cone.areaCone();
+    //    stream << "Area of cone: " << res;
+    //    break;
+    //case "Cylinder":
+    //    res = cylinder.areaCyl();
+    //    stream << "Area of cylinder: " << res;
+    //    break;
+    //case "Sphere":
+    //    res = sphere.areaSph();
+    //    stream << "Area of sphere: " << res;
+    //    break;
+    //case "Cube":
+    //    try {
+    //        res = cube.areaCube();
+    //        stream << "Area of cube: " << res;
+    //        break;
+    //    }
+    //    catch (std::string& str) {
+    //        return str;
+    //    }
+    //}
 
     message_ = stream.str();
 
