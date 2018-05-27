@@ -15,20 +15,18 @@ set::set(set& x) {
 void set::Insert(int k) {
     if (k <= 0 || k > MaxPow)
         return;
-    BF.setbit(k);
+    BF.SetBit(k);
 }
 
 int set::GetN(int k) {
-    for (int i = 1; i <= MaxPow; i++) {
-        if (Get(k)) {
-            return k;
-        }
+    if (Get(k)) {
+        return k;
     }
     return 0;
 }
 
 int set::Get(int k) {
-    return BF.getbit(k);
+    return BF.GetBit(k);
 }
 
 set set :: operator+(const set& x) {
