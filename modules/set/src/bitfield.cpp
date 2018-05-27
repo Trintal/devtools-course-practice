@@ -24,7 +24,6 @@ bitfield::bitfield(const bitfield& tmp) {
     }
 }
 
-
 bitfield::~bitfield() {
     delete[] arr;
 }
@@ -37,11 +36,11 @@ int bitfield::Mask(int k) {
     return 1 << (k % sizeof(int) << 3);
 }
 
-void bitfield::setbit(int T) {
+void bitfield::SetBit(int T) {
     arr[Mem_index(T)] |= Mask(T);
 }
 
-int bitfield::getbit(int T) {
+int bitfield::GetBit(int T) {
     return arr[Mem_index(T)] & Mask(T);
 }
 

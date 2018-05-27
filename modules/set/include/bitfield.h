@@ -7,7 +7,7 @@
 class bitfield{
     int* arr;
     int n;
-    int sizeU;
+    int sizeU = 10;
     int k;
     int Mem_index(int k);
     int Mask(int k);
@@ -17,8 +17,8 @@ class bitfield{
     bitfield(const bitfield&);
     ~bitfield(void);
 
-    void setbit(int k);
-    int getbit(int k);
+    void SetBit(int k);
+    int GetBit(int k);
 
     bitfield operator ~();
     bitfield operator &(const bitfield&);
