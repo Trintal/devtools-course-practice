@@ -80,22 +80,22 @@ std::string GeometryT::operator()(int argc, const char** argv) {
     Cube cube;
     std::ostringstream stream;
 
-    if (argc == 3 && (argv[1] == const("Cone"))) {
+    if (argc == 3 && (argv[1] == ("Cone"))) {
         Cone cone(args.radius, args.height);
         res = cone.areaCone();
         stream << "Area of cone: " << res;
     }
-    if (argc == 3 && (argv[1] == const("Cylinder"))) {
+    if (argc == 3 && (argv[1] == ("Cylinder"))) {
         Cylinder cyliner(args.radius, args.height);
         res = cylinder.areaCyl();
         stream << "Area of cylinder: " << res;
     }
-    if (argc == 2 && (argv[1] == const(<char*>("Sphere")))) {
+    if (argc == 2 && (argv[1] == ("Sphere"))) {
         Sphere sphere(args.radius);
         res = sphere.areaSph();
         stream << "Area of sphere: " << res;
     }
-    if (argc == 2 && (argv[1] == const("Cube"))) {
+    if (argc == 2 && (argv[1] == ("Cube"))) {
         Cube cube(args.radius);
         res = cube.areaCube();
         stream << "Area of cube: " << res;
