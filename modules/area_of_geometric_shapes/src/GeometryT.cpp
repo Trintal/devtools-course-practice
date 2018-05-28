@@ -49,7 +49,6 @@ double parseDouble(const char* arg) {
 
 std::string GeometryT::operator()(int argc, const char** argv) {
     Arguments args;
-    double res = 0;
 
     if (!validateNumberOfArguments(argc, argv)) {
         return message_;
@@ -80,24 +79,24 @@ std::string GeometryT::operator()(int argc, const char** argv) {
     Cube cube;
     std::ostringstream stream;
 
-    if (argc == 3 && (argv[1] == <char*>("Cone"))) {
+    if (argc == 3 && (argv[1] == <char**>("Cone"))) {
         Cone cone(args.radius, args.height);
-        res = cone.areaCone();
+        double res = cone.areaCone();
         stream << "Area of cone: " << res;
     }
-    if (argc == 3 && (argv[1] == <char*>("Cylinder"))) {
+    if (argc == 3 && (argv[1] == <char**>("Cylinder"))) {
         Cylinder cyliner(args.radius, args.height);
-        res = cylinder.areaCyl();
+        double res = cylinder.areaCyl();
         stream << "Area of cylinder: " << res;
     }
-    if (argc == 2 && (argv[1] == <char*>("Sphere"))) {
+    if (argc == 2 && (argv[1] == <char**>("Sphere"))) {
         Sphere sphere(args.radius);
-        res = sphere.areaSph();
+        double res = sphere.areaSph();
         stream << "Area of sphere: " << res;
     }
-    if (argc == 2 && (argv[1] == <char*>("Cube"))) {
+    if (argc == 2 && (argv[1] == <char**>("Cube"))) {
         Cube cube(args.radius);
-        res = cube.areaCube();
+        double res = cube.areaCube();
         stream << "Area of cube: " << res;
     }
 
