@@ -101,30 +101,6 @@ std::string GeometryT::operator()(int argc, const char** argv) {
         stream << "Area of cube: " << res;
     }
 
-    //  switch (argv[1]) {
-    //  case "Cone":
-    //    res = cone.areaCone();
-    //    stream << "Area of cone: " << res;
-    //    break;
-    //  case "Cylinder":
-    //    res = cylinder.areaCyl();
-    //    stream << "Area of cylinder: " << res;
-    //    break;
-    //  case "Sphere":
-    //    res = sphere.areaSph();
-    //    stream << "Area of sphere: " << res;
-    //    break;
-    //  case "Cube":
-    //    try {
-    //        res = cube.areaCube();
-    //        stream << "Area of cube: " << res;
-    //        break;
-    //    }
-    //    catch (std::string& str) {
-    //        return str;
-    //    }
-    //  }
-
     message_ = stream.str();
 
     return message_;
