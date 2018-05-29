@@ -99,7 +99,6 @@ std::string GeometryT::operator()(int argc, const char** argv) {
         double res = cube.areaCube();
         stream << "Area of cube: " << res;
     }
-    return str;
 
     //  switch (argv[1]) {
     //  case "Cone":
