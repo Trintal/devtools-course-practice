@@ -31,7 +31,7 @@ bool GeometryT::validateNumberOfArguments(int argc, const char** argv) {
         help(argv[0]);
         return false;
     } else if (argc > 4) {
-        help(argv[0], "ERROR: Should be not more than 3");
+        help(argv[0], "ERROR: Should be not more than 3 arg");
         return false;
     }
     return true;
@@ -48,6 +48,20 @@ double parseDouble(const char* arg) {
     return value;
 }
 
+int parseFigure(const char* arg) {
+    if (strcmp(arg, "Cone") == 0) {
+        return 1;
+    } else if (strcmp(arg, "Cylinder") == 0) {
+        return 2;
+    } else if (strcmp(arg, "Sphere") == 0) {
+        return 3;
+    } else if (strcmp(arg, "Cube") == 0) {
+        return 4;
+    } else {
+        throw std::string("Wrong figure format!");
+    }
+}
+
 std::string GeometryT::operator()(int argc, const char** argv) {
     Arguments args;
 
@@ -57,15 +71,15 @@ std::string GeometryT::operator()(int argc, const char** argv) {
 
     if (argc == 3) {
         try {
+            args.figure = parseFigure(argv[1]);
             args.radius = parseDouble(argv[2]);
         }
         catch (std::string& str) {
             return str;
         }
-    }
-
-    if (argc == 4) {
+    } else {
         try {
+            args.figure = parseFigure(argv[1]);
             args.radius = parseDouble(argv[2]);
             args.height = parseDouble(argv[3]);
         }
@@ -80,25 +94,27 @@ std::string GeometryT::operator()(int argc, const char** argv) {
     Cube cube;
     std::ostringstream stream;
 
-    if (argc == 3 && (strcmp(argv[1], ("Cone")) == 0)) {
-        Cone cone(args.radius, args.height);
-        double res = cone.areaCone();
-        stream << "Area of cone: " << res;
-    }
-    if (argc == 3 && (strcmp(argv[1], ("Cylinder")) == 0)) {
-        Cylinder cyliner(args.radius, args.height);
-        double res = cylinder.areaCyl();
-        stream << "Area of cylinder: " << res;
-    }
-    if (argc == 2 && (strcmp(argv[1], ("Sphere")) == 0)) {
-        Sphere sphere(args.radius);
-        double res = sphere.areaSph();
-        stream << "Area of sphere: " << res;
-    }
-    if (argc == 2 && (strcmp(argv[1], ("Cube")) ==0)) {
-        Cube cube(args.radius);
-        double res = cube.areaCube();
-        stream << "Area of cube: " << res;
+	switch (args.figure) {
+    case 1:
+            Cone cone(args.radius, args.height);
+            double res = cone.areaCone();
+            stream << "Area of cone: " << res;
+            break;
+    case 2:
+            Cylinder cyliner(args.radius, args.height);
+            double res = cylinder.areaCyl();
+            stream << "Area of cylinder: " << res;
+            break;
+    case 3:
+            Sphere sphere(args.radius);
+            double res = sphere.areaSph();
+            stream << "Area of sphere: " << res;
+            break;
+    case 4:
+            Cube cube(args.radius);
+            double res = cube.areaCube();
+            stream << "Area of cube: " << res;
+            break;
     }
 
     message_ = stream.str();

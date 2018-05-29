@@ -15,6 +15,7 @@ class GeometryT {
     bool validateNumberOfArguments(int argc, const char** argv);
     std::string message_;
     typedef struct {
+        int figure;
         double radius;
         double height;
     } Arguments;
