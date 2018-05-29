@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <string>
 #include <sstream>
+#include <cstring>
 
 #include "include/GeometryT.h"
 #include "include/Cone.h"
