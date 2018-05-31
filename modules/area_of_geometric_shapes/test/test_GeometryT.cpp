@@ -9,10 +9,10 @@
 #include <vector>
 
 #include "include/GeometryT.h"
-#include "Cube.h"
-#include "Cone.h"
-#include "Cylinder.h"
-#include "Sphere.h"
+#include "include/Cube.h"
+#include "include/Cone.h"
+#include "include/Cylinder.h"
+#include "include/Sphere.h"
 
 
 using ::testing::internal::RE;
