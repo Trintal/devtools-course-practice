@@ -9,6 +9,11 @@
 #include <vector>
 
 #include "include/GeometryT.h"
+#include "Cube.h"
+#include "Cone.h"
+#include "Cylinder.h"
+#include "Sphere.h"
+
 
 using ::testing::internal::RE;
 using std::vector;
@@ -40,114 +45,114 @@ class GeometryTTest : public ::testing::Test {
 };
 
 TEST(GeometryTTest, Can_Calculate_Cone_Area) {
-    //Arrange
+    // Arrange
     int argc = 3;
     double res = 0;
     vector<const char*> v = { "Cone", "2.1", "4.5" };
     const char** argv = v.data();
     Cone cone(2.1, 4.5);
 
-    //Act
+    // Act
     res = cone.areaCone();
 
-    //Assert
+    // Assert
     EXPECT_EQ(res, 43.5425)
 }
 
 TEST(GeometryTTest, Cant_Calculate_Cone_Negative) {
-    //Arrange
+    // Arrange
     int argc = 3;
     double res = 0;
     vector<const char*> v = { "Cone", "-2", "3" };
     const char** argv = v.data();
     Cone cone(-2, 3);
 
-    //Act
+    // Act
     res = cone.areaCone();
 
-    //Assert
+    // Assert
     EXPECT_EQ(res, 0)
 }
 
 
 TEST(GeometryTTest, Can_Calculate_Cube_Area) {
-    //Arrange
+    // Arrange
     int argc = 2;
     double res = 0;
     vector<const char*> v = { "Cube", "2" };
     const char** argv = v.data();
     Cube cube(2);
 
-    //Act
+    // Act
     res = cube.areaCube();
 
-    //Assert
+    // Assert
     EXPECT_EQ(res, 24)
 }
 
 TEST(GeometryTTest, Cant_Calculate_Cube_Negative) {
-    //Arrange
+    // Arrange
     int argc = 2;
     double res = 0;
     vector<const char*> v = { "Cube", "-2" };
     const char** argv = v.data();
     Cube cube(-2);
 
-    //Act
+    // Act
     res = cube.areaCube();
 
-    //Assert
+    // Assert
     EXPECT_EQ(res, 0)
 }
 
 TEST(GeometryTTest, Can_Calculate_Cylinder_Area) {
-    //Arrange
+    // Arrange
     int argc = 3;
     double res = 0;
     vector<const char*> v = { "Cylinder", "2", "3" };
 
-    //Act
+    // Act
     res = cylinder.areaCyl();
 
-    //Assert
+    // Assert
     EXPECT_EQ(res, 37.68)
 }
 
 TEST(GeometryTTest, Cant_Calculate_Cylinder_Negative) {
-    //Arrange
+    // Arrange
     int argc = 3;
     double res = 0;
     vector<const char*> v = { "Cylinder", "-2", "3" };
 
-    //Act
+    // Act
     res = cylinder.areaCyl();
 
-    //Assert
+    // Assert
     EXPECT_EQ(res, 0)
 }
 
 TEST(GeometryTTest, Can_Calculate_Sphere_Area) {
-    //Arrange
+    // Arrange
     int argc = 2;
     double res = 0;
     vector<const char*> v = { "Sphere", "2" };
 
-    //Act
+    // Act
     res = sphere.areaSph();
 
-    //Assert
+    // Assert
     EXPECT_EQ(res, 50.24)
 }
 
 TEST(GeometryTTest, Cant_Calculate_Sphere_Negative) {
-    //Arrange
+    // Arrange
     int argc = 2;
     double res = 0;
     vector<const char*> v = { "Sphere", "-2" };
 
-    //Act
+    // Act
     res = sphere.areaSph();
 
-    //Assert
+    // Assert
     EXPECT_EQ(res, 0)
 }
