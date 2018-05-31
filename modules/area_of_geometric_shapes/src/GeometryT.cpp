@@ -5,6 +5,7 @@
 #include <string>
 #include <sstream>
 #include <cstring>
+#include <cstdint>
 
 #include "include/GeometryT.h"
 #include "include/Cone.h"
@@ -88,29 +89,28 @@ std::string GeometryT::operator()(int argc, const char** argv) {
         }
     }
 
-    double res = 0;
 
     std::ostringstream stream;
 
     switch (args.figure) {
     case 1: {
         Cone cone(args.radius, args.height);
-        res = cone.areaCone();
+        double res = cone.areaCone();
         stream << "Area of cone: " << res;
         break; }
     case 2: {
         Cylinder cylinder(args.radius, args.height);
-        res = cylinder.areaCyl();
+        double res = cylinder.areaCyl();
         stream << "Area of cylinder: " << res;
         break; }
     case 3: {
         Sphere sphere(args.radius);
-        res = sphere.areaSph();
+        double res = sphere.areaSph();
         stream << "Area of sphere: " << res;
         break; }
     case 4: {
         Cube cube(args.radius);
-        res = cube.areaCube();
+        double res = cube.areaCube();
         stream << "Area of cube: " << res;
         break; }
     }
