@@ -56,7 +56,7 @@ TEST(GeometryTTest, Can_Calculate_Cone_Area) {
     res = cone.areaCone();
 
     // Assert
-    EXPECT_EQ(res, 43.5425)
+	EXPECT_EQ(res, 43.5425);
 }
 
 TEST(GeometryTTest, Cant_Calculate_Cone_Negative) {
@@ -71,7 +71,7 @@ TEST(GeometryTTest, Cant_Calculate_Cone_Negative) {
     res = cone.areaCone();
 
     // Assert
-    EXPECT_EQ(res, 0)
+	EXPECT_EQ(res, 0);
 }
 
 
@@ -87,7 +87,7 @@ TEST(GeometryTTest, Can_Calculate_Cube_Area) {
     res = cube.areaCube();
 
     // Assert
-    EXPECT_EQ(res, 24)
+	EXPECT_EQ(res, 24);
 }
 
 TEST(GeometryTTest, Cant_Calculate_Cube_Negative) {
@@ -102,7 +102,7 @@ TEST(GeometryTTest, Cant_Calculate_Cube_Negative) {
     res = cube.areaCube();
 
     // Assert
-    EXPECT_EQ(res, 0)
+	EXPECT_EQ(res, 0);
 }
 
 TEST(GeometryTTest, Can_Calculate_Cylinder_Area) {
@@ -115,7 +115,7 @@ TEST(GeometryTTest, Can_Calculate_Cylinder_Area) {
     res = cylinder.areaCyl();
 
     // Assert
-    EXPECT_EQ(res, 37.68)
+	EXPECT_EQ(res, 37.68);
 }
 
 TEST(GeometryTTest, Cant_Calculate_Cylinder_Negative) {
@@ -128,7 +128,7 @@ TEST(GeometryTTest, Cant_Calculate_Cylinder_Negative) {
     res = cylinder.areaCyl();
 
     // Assert
-    EXPECT_EQ(res, 0)
+	EXPECT_EQ(res, 0);
 }
 
 TEST(GeometryTTest, Can_Calculate_Sphere_Area) {
@@ -141,7 +141,7 @@ TEST(GeometryTTest, Can_Calculate_Sphere_Area) {
     res = sphere.areaSph();
 
     // Assert
-    EXPECT_EQ(res, 50.24)
+	EXPECT_EQ(res, 50.24);
 }
 
 TEST(GeometryTTest, Cant_Calculate_Sphere_Negative) {
@@ -154,5 +154,5 @@ TEST(GeometryTTest, Cant_Calculate_Sphere_Negative) {
     res = sphere.areaSph();
 
     // Assert
-    EXPECT_EQ(res, 0)
+	EXPECT_EQ(res, 0);
 }
