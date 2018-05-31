@@ -86,7 +86,7 @@ TEST(AreaOfGeometricShapes, Area_Calculation_Cone) {
     res = cone.areaCone();
 
     // Assert
-    EXPECT_NEAR(res, 43.5425, 0.0001);
+    EXPECT_NEAR(res, 43.5204, 0.0001);
 }
 
 TEST(AreaOfGeometricShapes, Copy_Cone) {

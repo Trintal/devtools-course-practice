@@ -89,27 +89,27 @@ std::string GeometryT::operator()(int argc, const char** argv) {
     }
 
     double res = 0;
-    Cone cone(args.radius, args.height);
-    Cylinder cylinder(args.radius, args.height);
-    Sphere sphere(args.radius);
-    Cube cube(args.radius);
 
     std::ostringstream stream;
 
     switch (args.figure) {
     case 1:
+            Cone cone(args.radius, args.height);
             res = cone.areaCone();
             stream << "Area of cone: " << res;
             break;
     case 2:
+            Cylinder cylinder(args.radius, args.height);
             res = cylinder.areaCyl();
             stream << "Area of cylinder: " << res;
             break;
     case 3:
+            Sphere sphere(args.radius);
             res = sphere.areaSph();
             stream << "Area of sphere: " << res;
             break;
     case 4:
+            Cube cube(args.radius);
             res = cube.areaCube();
             stream << "Area of cube: " << res;
             break;

@@ -4,7 +4,7 @@
 
 #include <string>
 
-const double pi = 3.141592653589793238463;
+const double pi = 3.14;
 
 Cone::Cone() : radius(0), l(0) {}
 
