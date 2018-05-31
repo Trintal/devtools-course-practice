@@ -39,7 +39,7 @@ class GeometryTTest : public ::testing::Test {
     string output_;
 };
 
-TEST_F(GeometryTTest, Do_Print_Help_No_Arguments) {
+TEST(GeometryTTest, Do_Print_Help_No_Arguments) {
     vector<string> args = {};
 
     Act(args);
@@ -47,7 +47,7 @@ TEST_F(GeometryTTest, Do_Print_Help_No_Arguments) {
     Assert("This *");
 }
 
-TEST_F(GeometryTTest, Can_Calculate_Cone_Area) {
+TEST(GeometryTTest, Can_Calculate_Cone_Area) {
     vector<string> args = { "Cone", "2.1", "4.5" };
 
     Act(args);
@@ -55,7 +55,7 @@ TEST_F(GeometryTTest, Can_Calculate_Cone_Area) {
     Assert("Area of cone: 43.5425");
 }
 
-TEST_F(GeometryTTest, Cant_Calculate_Cone_Negative) {
+TEST(GeometryTTest, Cant_Calculate_Cone_Negative) {
     vector<string> args = { "Cone", "-2", "3" };
 
     Act(args);
@@ -64,7 +64,7 @@ TEST_F(GeometryTTest, Cant_Calculate_Cone_Negative) {
 }
 
 
-TEST_F(GeometryTTest, Can_Calculate_Cube_Area) {
+TEST(GeometryTTest, Can_Calculate_Cube_Area) {
     vector<string> args = { "Cube", "2" };
 
     Act(args);
@@ -72,7 +72,7 @@ TEST_F(GeometryTTest, Can_Calculate_Cube_Area) {
     Assert("Area of cube: 24");
 }
 
-TEST_F(GeometryTTest, Cant_Calculate_Cube_Negative) {
+TEST(GeometryTTest, Cant_Calculate_Cube_Negative) {
     vector<string> args = { "Cube", "-2" };
 
     Act(args);
@@ -80,7 +80,7 @@ TEST_F(GeometryTTest, Cant_Calculate_Cube_Negative) {
     Assert("Number can't be less then zero");
 }
 
-TEST_F(GeometryTTest, Can_Calculate_Cylinder_Area) {
+TEST(GeometryTTest, Can_Calculate_Cylinder_Area) {
     vector<string> args = { "Cylinder", "2", "3" };
 
     Act(args);
@@ -88,7 +88,7 @@ TEST_F(GeometryTTest, Can_Calculate_Cylinder_Area) {
     Assert("Area of cylinder: 37,699111843077518861556");
 }
 
-TEST_F(GeometryTTest, Cant_Calculate_Cylinder_Negative) {
+TEST(GeometryTTest, Cant_Calculate_Cylinder_Negative) {
     vector<string> args = { "Cylinder", "-2", "3" };
 
     Act(args);
@@ -96,7 +96,7 @@ TEST_F(GeometryTTest, Cant_Calculate_Cylinder_Negative) {
     Assert("Number can't be less then zero");
 }
 
-TEST_F(GeometryTTest, Can_Calculate_Sphere_Area) {
+TEST(GeometryTTest, Can_Calculate_Sphere_Area) {
     vector<string> args = { "Sphere", "2" };
 
     Act(args);
@@ -104,7 +104,7 @@ TEST_F(GeometryTTest, Can_Calculate_Sphere_Area) {
     Assert("Area of sphere: 50,265482457436691815408");
 }
 
-TEST_F(GeometryTTest, Cant_Calculate_Sphere_Negative) {
+TEST(GeometryTTest, Cant_Calculate_Sphere_Negative) {
     vector<string> args = { "Sphere", "-2" };
 
     Act(args);
