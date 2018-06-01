@@ -54,7 +54,7 @@ TEST_F(GeometryTTest, Can_Calculate_Cone_Area) {
 
     Act(args);
 
-    Assert("Area of cone: 43.5425");
+    Assert("Area of Cone: 43.5425");
 }
 
 TEST_F(GeometryTTest, Cant_Calculate_Cone_Negative) {
@@ -87,7 +87,7 @@ TEST_F(GeometryTTest, Can_Calculate_Cylinder_Area) {
 
     Act(args);
 
-    Assert("Area of cylinder: 37,699111843077518861556");
+    Assert("Area of cylinder: 37,68");
 }
 
 TEST_F(GeometryTTest, Cant_Calculate_Cylinder_Negative) {
@@ -103,7 +103,7 @@ TEST_F(GeometryTTest, Can_Calculate_Sphere_Area) {
 
     Act(args);
 
-    Assert("Area of sphere: 50,265482457436691815408");
+    Assert("Area of sphere: 50,24");
 }
 
 TEST_F(GeometryTTest, Cant_Calculate_Sphere_Negative) {

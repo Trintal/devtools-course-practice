@@ -16,23 +16,15 @@ add_test(
     COMMAND ${APPLICATION}
 )
 set_tests_properties (${prefix}_can_Print_Help_Without_Arguments PROPERTIES
-    PASS_REGULAR_EXPRESSION "This is a calculation of area of geometric figures application"
-    LABELS "${MODULE}")
-
-add_test(
-    NAME ${prefix}_can_Check_Number_Of_Arguments
-    COMMAND ${APPLICATION} Cone 2 3
-)
-set_tests_properties (${prefix}_can_Check_Number_Of_Arguments PROPERTIES
-    PASS_REGULAR_EXPRESSION "ERROR: Should be not more than 3"
+    PASS_REGULAR_EXPRESSION "Please provide arguments in the following format:*"
     LABELS "${MODULE}")
 
 add_test(
     NAME ${prefix}_can_Calculate_Cone_Area
-    COMMAND ${APPLICATION} Cone 2 3
+    COMMAND ${APPLICATION} Cone 2.1 4.5
 )
 set_tests_properties (${prefix}_can_Calculate_Cone_Area PROPERTIES
-    PASS_REGULAR_EXPRESSION "Area of Cone: 31,41592653589793238463"
+    PASS_REGULAR_EXPRESSION "Area of Cone: 43.5425"
     LABELS "${MODULE}")
 
 add_test(
@@ -64,7 +56,7 @@ add_test(
     COMMAND ${APPLICATION} Cylinder 2 3
 )
 set_tests_properties (${prefix}_can_Calculate_Cylinder_Area PROPERTIES
-    PASS_REGULAR_EXPRESSION "Area of Cylinder: 37,699111843077518861556"
+    PASS_REGULAR_EXPRESSION "Area of Cylinder: 37,68"
     LABELS "${MODULE}")
 
 add_test(
@@ -80,7 +72,7 @@ add_test(
     COMMAND ${APPLICATION} Sphere 2
 )
 set_tests_properties (${prefix}_can_Calculate_Sphere_Area PROPERTIES
-    PASS_REGULAR_EXPRESSION "Area of Sphere: 50,265482457436691815408"
+    PASS_REGULAR_EXPRESSION "Area of Sphere: 50,24"
     LABELS "${MODULE}")
 
 add_test(
