@@ -61,7 +61,7 @@ std::string GeometryT::operator()(int argc, const char** argv) {
     if (argc == 3) {
         try {
             args.figure = parseFigure(argc, argv[1]);
-            args.radius = parseDouble(argc, argv[2]);
+            args.radius = argv[2];
         }
         catch (std::string& str) {
             return str;
@@ -69,8 +69,8 @@ std::string GeometryT::operator()(int argc, const char** argv) {
     } else {
         try {
             args.figure = parseFigure(argc, argv[1]);
-            args.radius = parseDouble(argc, argv[2]);
-            args.height = parseDouble(argc, argv[3]);
+            args.radius =argv[2];
+            args.height =argv[3];
         }
         catch (std::string& str) {
             return str;
