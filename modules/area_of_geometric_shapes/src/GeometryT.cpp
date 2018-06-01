@@ -20,7 +20,7 @@ void GeometryT::help(const char* appname, const char* message) {
         std::string(message) +
         "Please provide arguments in the following format : \n\n"
 
-        " $" + appname + 
+        " $" + appname +
         "Name of figure <Cone/Cube/Cylinder/Sphere>" +
         "<radius> <height> for Cylinder and Cone \n" +
         "Or <radius> for Sphere and Cube. \n\n" +
@@ -28,12 +28,13 @@ void GeometryT::help(const char* appname, const char* message) {
         "Where arguments are real positive numbers. \n\n";
 }
 
-double parseDouble(int argc, const char** argv) {
+bool parseDouble(int argc, const char** argv) {
     if (argc < 3 || argc > 4) {
         throw std::string("Wrong number format!");
+        help(argv[0]);
     }
 
-    return value;
+    return false;
 }
 
 int parseFigure(int argc, const char** argv) {
@@ -53,23 +54,23 @@ int parseFigure(int argc, const char** argv) {
 std::string GeometryT::operator()(int argc, const char** argv) {
     Arguments args;
 
-    if (!validateNumberOfArguments(argc, argv)) {
+    if (!parseDouble(argc, argv)) {
         return message_;
     }
 
     if (argc == 3) {
         try {
-            args.figure = parseFigure(argv[1]);
-            args.radius = parseDouble(argv[2]);
+            args.figure = parseFigure(argc, argv[1]);
+            args.radius = parseDouble(argc, argv[2]);
         }
         catch (std::string& str) {
             return str;
         }
     } else {
         try {
-            args.figure = parseFigure(argv[1]);
-            args.radius = parseDouble(argv[2]);
-            args.height = parseDouble(argv[3]);
+            args.figure = parseFigure(argc, argv[1]);
+            args.radius = parseDouble(argc, argv[2]);
+            args.height = parseDouble(argc, argv[3]);
         }
         catch (std::string& str) {
             return str;
