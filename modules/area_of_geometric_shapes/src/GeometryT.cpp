@@ -40,11 +40,11 @@ bool parseDouble(int argc, const char** argv) {
 int parseFigure(int argc, const char* argv) {
     if (argv[1] == const_cast<char*>("Cone")) {
         return 1;
-    } else if (argv[1] == const_cast<char*>("Cylinder")) {
+    } else if (strcmp(argv[1], ("Cylinder")) == 0) {
         return 2;
-    } else if (argv[1] == const_cast<char*>("Sphere")) {
+    } else if (strcmp(argv[1], ("Sphere")) == 0) {
         return 3;
-    } else if (argv[1] == const_cast<char*>("Cube")) {
+    } else if (strcmp(argv[1], ("Cube")) == 0) {
         return 4;
     } else {
         throw std::string("Wrong figure format!");
