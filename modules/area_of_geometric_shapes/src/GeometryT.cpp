@@ -15,7 +15,7 @@
 
 GeometryT::GeometryT() : message_("") {}
 
-void GeometryT::help(const char* appname, const char* message = "") {
+void GeometryT::help(const char* appname, const char* message) {
     message_ =
         std::string(message) +
         "Please provide arguments in the following format : \n\n"
@@ -30,7 +30,6 @@ void GeometryT::help(const char* appname, const char* message = "") {
 
 bool parseDouble(int argc, const char** argv) {
     if (argc < 3 || argc > 4) {
-        throw std::string("Wrong number format!");
         help(argv[0]);
     }
 
