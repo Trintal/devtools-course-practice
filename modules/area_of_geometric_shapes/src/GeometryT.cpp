@@ -1,4 +1,4 @@
-// Copyright 2017 Levitsky Ilya
+// Copyright 2018 Levitsky Ilya
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -28,9 +28,9 @@ void GeometryT::help(const char* appname, const char* message) {
         "Where arguments are real positive numbers. \n\n";
 }
 
-bool parseDouble(int argc, const char** argv) {
+bool GeometryT::parseDouble(int argc, const char** argv) {
     if (argc < 3 || argc > 4) {
-		help(argv[0], message_);
+		help(argv[0]);
     }
 
     return false;
