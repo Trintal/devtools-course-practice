@@ -18,45 +18,32 @@ GeometryT::GeometryT() : message_("") {}
 void GeometryT::help(const char* appname, const char* message) {
     message_ =
         std::string(message) +
-        "This is a area of geometric figure.\n\n" +
         "Please provide arguments in the following format : \n\n"
 
-        " $" + appname + " <radius> <height> for Cylinder and Cone \n" +
-        "Or <radius/height> for Sphere and Cube. \n\n" +
+        " $" + appname + 
+        "Name of figure <Cone/Cube/Cylinder/Sphere>" +
+        "<radius> <height> for Cylinder and Cone \n" +
+        "Or <radius> for Sphere and Cube. \n\n" +
 
         "Where arguments are real positive numbers. \n\n";
 }
 
-bool GeometryT::validateNumberOfArguments(int argc, const char** argv) {
-    if (argc == 1) {
-        help(argv[0]);
-        return false;
-    } else if (argc > 4) {
-        help(argv[0], "ERROR: Should be not more than 3 arg");
-        return false;
-    }
-    return true;
-}
-
-double parseDouble(const char* arg) {
-    char* end;
-    double value = strtod(arg, &end);
-
-    if (end[0]) {
+double parseDouble(int argc, const char** argv) {
+    if (argc < 3 || argc > 4) {
         throw std::string("Wrong number format!");
     }
 
     return value;
 }
 
-int parseFigure(const char* arg) {
-    if (strcmp(arg, "Cone") == 0) {
+int parseFigure(int argc, const char** argv) {
+    if (strcmp(argv[1], "Cone") == 0) {
         return 1;
-    } else if (strcmp(arg, "Cylinder") == 0) {
+    } else if (strcmp(argv[1], "Cylinder") == 0) {
         return 2;
-    } else if (strcmp(arg, "Sphere") == 0) {
+    } else if (strcmp(argv[1], "Sphere") == 0) {
         return 3;
-    } else if (strcmp(arg, "Cube") == 0) {
+    } else if (strcmp(argv[1], "Cube") == 0) {
         return 4;
     } else {
         throw std::string("Wrong figure format!");

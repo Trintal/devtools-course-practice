@@ -9,10 +9,6 @@
 #include <vector>
 
 #include "include/GeometryT.h"
-#include "include/Cube.h"
-#include "include/Cone.h"
-#include "include/Cylinder.h"
-#include "include/Sphere.h"
 
 
 using ::testing::internal::RE;
@@ -44,115 +40,76 @@ class GeometryTTest : public ::testing::Test {
     string output_;
 };
 
-TEST(GeometryTTest, Can_Calculate_Cone_Area) {
-    // Arrange
-    int argc = 3;
-    double res = 0;
-    vector<const char*> v = { "Cone", "2.1", "4.5" };
-    const char** argv = v.data();
-    Cone cone(2.1, 4.5);
 
-    // Act
-    res = cone.areaCone();
+TEST_F(GeometryTTest, Do_Print_Help_No_Arguments) {
+    vector<string> args = {};
 
-    // Assert
-	EXPECT_EQ(res, 43.5425);
+    Act(args);
+
+    Assert("Please provide arguments in the following format:*");
 }
 
-TEST(GeometryTTest, Cant_Calculate_Cone_Negative) {
-    // Arrange
-    int argc = 3;
-    double res = 0;
-    vector<const char*> v = { "Cone", "-2", "3" };
-    const char** argv = v.data();
-    Cone cone(-2, 3);
+TEST_F(GeometryTTest, Can_Calculate_Cone_Area) {
+    vector<string> args = { "Cone", "2.1", "4.5" };
 
-    // Act
-    res = cone.areaCone();
+    Act(args);
 
-    // Assert
-	EXPECT_EQ(res, 0);
+    Assert("Area of cone: 43.5425");
+}
+
+TEST_F(GeometryTTest, Cant_Calculate_Cone_Negative) {
+    vector<string> args = { "Cone", "-2", "3" };
+
+    Act(args);
+
+    Assert("Number can't be less then zero");
 }
 
 
-TEST(GeometryTTest, Can_Calculate_Cube_Area) {
-    // Arrange
-    int argc = 2;
-    double res = 0;
-    vector<const char*> v = { "Cube", "2" };
-    const char** argv = v.data();
-    Cube cube(2);
+TEST_F(GeometryTTest, Can_Calculate_Cube_Area) {
+    vector<string> args = { "Cube", "2" };
 
-    // Act
-    res = cube.areaCube();
+    Act(args);
 
-    // Assert
-	EXPECT_EQ(res, 24);
+    Assert("Area of cube: 24");
 }
 
-TEST(GeometryTTest, Cant_Calculate_Cube_Negative) {
-    // Arrange
-    int argc = 2;
-    double res = 0;
-    vector<const char*> v = { "Cube", "-2" };
-    const char** argv = v.data();
-    Cube cube(-2);
+TEST_F(GeometryTTest, Cant_Calculate_Cube_Negative) {
+    vector<string> args = { "Cube", "-2" };
 
-    // Act
-    res = cube.areaCube();
+    Act(args);
 
-    // Assert
-	EXPECT_EQ(res, 0);
+    Assert("Number can't be less then zero");
 }
 
-TEST(GeometryTTest, Can_Calculate_Cylinder_Area) {
-    // Arrange
-    int argc = 3;
-    double res = 0;
-    vector<const char*> v = { "Cylinder", "2", "3" };
+TEST_F(GeometryTTest, Can_Calculate_Cylinder_Area) {
+    vector<string> args = { "Cylinder", "2", "3" };
 
-    // Act
-    res = cylinder.areaCyl();
+    Act(args);
 
-    // Assert
-	EXPECT_EQ(res, 37.68);
+    Assert("Area of cylinder: 37,699111843077518861556");
 }
 
-TEST(GeometryTTest, Cant_Calculate_Cylinder_Negative) {
-    // Arrange
-    int argc = 3;
-    double res = 0;
-    vector<const char*> v = { "Cylinder", "-2", "3" };
+TEST_F(GeometryTTest, Cant_Calculate_Cylinder_Negative) {
+    vector<string> args = { "Cylinder", "-2", "3" };
 
-    // Act
-    res = cylinder.areaCyl();
+    Act(args);
 
-    // Assert
-	EXPECT_EQ(res, 0);
+    Assert("Number can't be less then zero");
 }
 
-TEST(GeometryTTest, Can_Calculate_Sphere_Area) {
-    // Arrange
-    int argc = 2;
-    double res = 0;
-    vector<const char*> v = { "Sphere", "2" };
+TEST_F(GeometryTTest, Can_Calculate_Sphere_Area) {
+    vector<string> args = { "Sphere", "2" };
 
-    // Act
-    res = sphere.areaSph();
+    Act(args);
 
-    // Assert
-	EXPECT_EQ(res, 50.24);
+    Assert("Area of sphere: 50,265482457436691815408");
 }
 
-TEST(GeometryTTest, Cant_Calculate_Sphere_Negative) {
-    // Arrange
-    int argc = 2;
-    double res = 0;
-    vector<const char*> v = { "Sphere", "-2" };
+TEST_F(GeometryTTest, Cant_Calculate_Sphere_Negative) {
+    vector<string> args = { "Sphere", "-2" };
 
-    // Act
-    res = sphere.areaSph();
+    Act(args);
 
-    // Assert
-	EXPECT_EQ(res, 0);
+    Assert("Number can't be less then zero");
 }
