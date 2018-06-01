@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string>
+#include <string.h>
 #include <sstream>
 #include <cstring>
 #include <cstdint>
@@ -38,13 +39,13 @@ bool parseDouble(int argc, const char** argv) {
 }
 
 int parseFigure(int argc, const char* argv) {
-    if (argv[1] == const_cast<char*>("Cone")) {
+    if (strcmp(argv[1], "Cone") == 0) {
         return 1;
-    } else if (strcmp(argv[1], ("Cylinder")) == 0) {
+    } else if (strcmp(argv[1], "Cylinder") == 0) {
         return 2;
-    } else if (strcmp(argv[1], ("Sphere")) == 0) {
+    } else if (strcmp(argv[1], "Sphere") == 0) {
         return 3;
-    } else if (strcmp(argv[1], ("Cube")) == 0) {
+    } else if (strcmp(argv[1], "Cube") == 0) {
         return 4;
     } else {
         throw std::string("Wrong figure format!");
