@@ -12,6 +12,7 @@ class GeometryT {
 
  private:
     void help(const char* appname, const char* message = "");
+	bool parseDouble(int argc, const char** argv);
     std::string message_;
     typedef struct {
         const char* figure;
