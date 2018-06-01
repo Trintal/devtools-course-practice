@@ -15,7 +15,7 @@
 
 GeometryT::GeometryT() : message_("") {}
 
-void GeometryT::help(const char* appname, const char* message) {
+void GeometryT::help(const char* appname, const char* message = "") {
     message_ =
         std::string(message) +
         "Please provide arguments in the following format : \n\n"
