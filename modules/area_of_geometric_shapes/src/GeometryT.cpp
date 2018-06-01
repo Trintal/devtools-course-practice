@@ -3,7 +3,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string>
-#include <string.h>
 #include <sstream>
 #include <cstring>
 #include <cstdint>
@@ -81,27 +80,22 @@ std::string GeometryT::operator()(int argc, const char** argv) {
 
     std::ostringstream stream;
 
-    switch (args.figure) {
-    case 1: {
+    if (strcmp(args.figure, "Cone") == 0) {
         Cone cone(args.radius, args.height);
         double res = cone.areaCone();
         stream << "Area of cone: " << res;
-        break; }
-    case 2: {
+    } else if (strcmp(args.figure, "Cylinder") == 0) {
         Cylinder cylinder(args.radius, args.height);
         double res = cylinder.areaCyl();
         stream << "Area of cylinder: " << res;
-        break; }
-    case 3: {
+    } else if (strcmp(args.figure, "Sphere") == 0) {
         Sphere sphere(args.radius);
         double res = sphere.areaSph();
         stream << "Area of sphere: " << res;
-        break; }
-    case 4: {
+    } else if (strcmp(args.figure, "Cube") == 0) {
         Cube cube(args.radius);
         double res = cube.areaCube();
         stream << "Area of cube: " << res;
-        break; }
     }
 
     message_ = stream.str();
