@@ -14,7 +14,7 @@ class GeometryT {
     void help(const char* appname, const char* message = "");
     std::string message_;
     typedef struct {
-        int figure;
+        const char* figure;
         double radius;
         double height;
     } Arguments;

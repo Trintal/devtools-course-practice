@@ -38,19 +38,19 @@ bool parseDouble(int argc, const char** argv) {
     return false;
 }
 
-int parseFigure(int argc, const char* argv) {
-    if (strcmp(argv[1], "Cone") == 0) {
-        return 1;
-    } else if (strcmp(argv[1], "Cylinder") == 0) {
-        return 2;
-    } else if (strcmp(argv[1], "Sphere") == 0) {
-        return 3;
-    } else if (strcmp(argv[1], "Cube") == 0) {
-        return 4;
-    } else {
-        throw std::string("Wrong figure format!");
-    }
-}
+//  int parseFigure(int argc, const char* argv) {
+//    if (strcmp(argv[1], "Cone") == 0) {
+//        return 1;
+//    } else if (strcmp(argv[1], "Cylinder") == 0) {
+//        return 2;
+//    } else if (strcmp(argv[1], "Sphere") == 0) {
+//        return 3;
+//    } else if (strcmp(argv[1], "Cube") == 0) {
+//        return 4;
+//    } else {
+//        throw std::string("Wrong figure format!");
+//    }
+//  }
 
 std::string GeometryT::operator()(int argc, const char** argv) {
     Arguments args;
@@ -61,7 +61,7 @@ std::string GeometryT::operator()(int argc, const char** argv) {
 
     if (argc == 3) {
         try {
-            args.figure = parseFigure(argc, argv[1]);
+            args.figure = argv[1];
             args.radius = strtod(argv[2], NULL);
         }
         catch (std::string& str) {
@@ -69,7 +69,7 @@ std::string GeometryT::operator()(int argc, const char** argv) {
         }
     } else {
         try {
-            args.figure = parseFigure(argc, argv[1]);
+            args.figure = argv[1];
             args.radius = strtod(argv[2], NULL);
             args.height = strtod(argv[3], NULL);
         }
