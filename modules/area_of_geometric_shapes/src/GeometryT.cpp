@@ -30,7 +30,7 @@ void GeometryT::help(const char* appname, const char* message) {
 
 bool parseDouble(int argc, const char** argv) {
     if (argc < 3 || argc > 4) {
-		GeometryT::help(argv[0]);
+		help(argv[0], message_);
     }
 
     return false;
