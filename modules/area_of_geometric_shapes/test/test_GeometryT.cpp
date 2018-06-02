@@ -50,7 +50,7 @@ TEST_F(GeometryTTest, Do_Print_Help_No_Arguments) {
 }
 
 TEST_F(GeometryTTest, Can_Calculate_Cone_Area) {
-    vector<string> args = { "Cone", "2.1", "4.5" };
+    vector<string> args = { "-n", "2.1", "4.5" };
 
     Act(args);
 
@@ -58,7 +58,7 @@ TEST_F(GeometryTTest, Can_Calculate_Cone_Area) {
 }
 
 TEST_F(GeometryTTest, Cant_Calculate_Cone_Negative) {
-    vector<string> args = { "Cone", "-2", "3" };
+    vector<string> args = { "-n", "-2", "3" };
 
     Act(args);
 
@@ -67,7 +67,7 @@ TEST_F(GeometryTTest, Cant_Calculate_Cone_Negative) {
 
 
 TEST_F(GeometryTTest, Can_Calculate_Cube_Area) {
-    vector<string> args = { "Cube", "2" };
+    vector<string> args = { "-b", "2" };
 
     Act(args);
 
@@ -75,7 +75,7 @@ TEST_F(GeometryTTest, Can_Calculate_Cube_Area) {
 }
 
 TEST_F(GeometryTTest, Cant_Calculate_Cube_Negative) {
-    vector<string> args = { "Cube", "-2" };
+    vector<string> args = { "-b", "-2" };
 
     Act(args);
 
@@ -83,7 +83,7 @@ TEST_F(GeometryTTest, Cant_Calculate_Cube_Negative) {
 }
 
 TEST_F(GeometryTTest, Can_Calculate_Cylinder_Area) {
-    vector<string> args = { "Cylinder", "2", "3" };
+    vector<string> args = { "-c", "2", "3" };
 
     Act(args);
 
@@ -91,7 +91,7 @@ TEST_F(GeometryTTest, Can_Calculate_Cylinder_Area) {
 }
 
 TEST_F(GeometryTTest, Cant_Calculate_Cylinder_Negative) {
-    vector<string> args = { "Cylinder", "-2", "3" };
+    vector<string> args = { "-c", "-2", "3" };
 
     Act(args);
 
@@ -99,7 +99,7 @@ TEST_F(GeometryTTest, Cant_Calculate_Cylinder_Negative) {
 }
 
 TEST_F(GeometryTTest, Can_Calculate_Sphere_Area) {
-    vector<string> args = { "Sphere", "2" };
+    vector<string> args = { "-s", "2" };
 
     Act(args);
 
@@ -107,7 +107,7 @@ TEST_F(GeometryTTest, Can_Calculate_Sphere_Area) {
 }
 
 TEST_F(GeometryTTest, Cant_Calculate_Sphere_Negative) {
-    vector<string> args = { "Sphere", "-2" };
+    vector<string> args = { "-s", "-2" };
 
     Act(args);
 
