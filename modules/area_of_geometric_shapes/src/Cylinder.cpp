@@ -15,8 +15,7 @@ Cylinder::Cylinder(const double& _rad, const double& _h) {
         radius = _rad;
         h = _h;
     } else {
-        std::ostringstream stream;
-        stream << ("Numbers can't be less then zero");
+        throw std::string("Number can't be less then zero");
     }
 }
 

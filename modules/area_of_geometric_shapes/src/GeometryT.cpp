@@ -55,20 +55,20 @@ std::string GeometryT::operator()(int argc, const char** argv) {
     if (!parseDouble(argc, argv)) {
         return message_;
     }
+	
+    args.figure = argv[1];
 
-    if (argc == 3) {
+    if ((strcmp(args.figure, "Cone") == 0) || (strcmp(args.figure, "Cylinder") == 0)) {
         try {
-            args.figure = argv[1];
             args.radius = strtod(argv[2], NULL);
+            args.height = strtod(argv[3], NULL);
         }
         catch (std::string& str) {
             return str;
         }
     } else {
         try {
-            args.figure = argv[1];
             args.radius = strtod(argv[2], NULL);
-            args.height = strtod(argv[3], NULL);
         }
         catch (std::string& str) {
             return str;
@@ -79,30 +79,24 @@ std::string GeometryT::operator()(int argc, const char** argv) {
     std::ostringstream stream;
 
     if (strcmp(args.figure, "Cone") == 0) {
-        args.radius = strtod(argv[2], NULL);
-        args.height = strtod(argv[3], NULL);
         Cone cone(args.radius, args.height);
         if (cone.getRad() > 0 || cone.getL() > 0) {
             double res = cone.areaCone();
             stream << "Area of cone: " << res;
         }
     } else if (strcmp(args.figure, "Cylinder") == 0) {
-        args.radius = strtod(argv[2], NULL);
-        args.height = strtod(argv[3], NULL);
         Cylinder cylinder(args.radius, args.height);
         if (cylinder.getRad() > 0 || cylinder.getH() > 0) {
             double res = cylinder.areaCyl();
             stream << "Area of cylinder: " << res;
         }
     } else if (strcmp(args.figure, "Sphere") == 0) {
-        args.radius = strtod(argv[2], NULL);
         Sphere sphere(args.radius);
         if (sphere.getRad() > 0) {
             double res = sphere.areaSph();
             stream << "Area of sphere: " << res;
         }
     } else if (strcmp(args.figure, "Cube") == 0) {
-        args.radius = strtod(argv[2], NULL);
         Cube cube(args.radius);
         if (cube.getH() > 0) {
             double res = cube.areaCube();
