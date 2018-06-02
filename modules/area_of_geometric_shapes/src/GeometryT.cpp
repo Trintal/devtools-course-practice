@@ -45,6 +45,12 @@ bool GeometryT::validateNumberOfArguments(int argc, const char** argv) {
                 return false;
             }
             break;
+        case 'n':
+            if (argc != 4) {
+                help(argv[0]);
+                return false;
+            }
+            break;
         default:
             if (argc != 3) {
                 help(argv[0]);
