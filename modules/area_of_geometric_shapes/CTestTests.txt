@@ -72,7 +72,7 @@ add_test(
     COMMAND ${APPLICATION} -s 2
 )
 set_tests_properties (${prefix}_can_Calculate_Sphere_Area PROPERTIES
-    PASS_REGULAR_EXPRESSION "Area of sphere: 50.24"
+    PASS_REGULAR_EXPRESSION "Area = 50.24"
     LABELS "${MODULE}")
 
 add_test(
