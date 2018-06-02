@@ -21,7 +21,7 @@ set_tests_properties (${prefix}_can_Print_Help_Without_Arguments PROPERTIES
 
 add_test(
     NAME ${prefix}_Can_Calculate_Cone_Area
-    COMMAND ${APPLICATION} Cone 2.1 4.5
+    COMMAND ${APPLICATION} -n 2.1 4.5
 )
 set_tests_properties (${prefix}_Can_Calculate_Cone_Area PROPERTIES
     PASS_REGULAR_EXPRESSION "Area = 43.5204"
@@ -29,7 +29,7 @@ set_tests_properties (${prefix}_Can_Calculate_Cone_Area PROPERTIES
 
 add_test(
     NAME ${prefix}_Cant_Calculate_Cone_Negative
-    COMMAND ${APPLICATION} Cone -2 3
+    COMMAND ${APPLICATION} -n -2 3
 )
 set_tests_properties (${prefix}_Cant_Calculate_Cone_Negative PROPERTIES
     PASS_REGULAR_EXPRESSION "Number can't be less then zero"
@@ -37,7 +37,7 @@ set_tests_properties (${prefix}_Cant_Calculate_Cone_Negative PROPERTIES
 
 add_test(
     NAME ${prefix}_Can_Calculate_Cube_Area
-    COMMAND ${APPLICATION} Cube 2
+    COMMAND ${APPLICATION} -b 2
 )
 set_tests_properties (${prefix}_Can_Calculate_Cube_Area PROPERTIES
     PASS_REGULAR_EXPRESSION "Area = 24"
@@ -45,7 +45,7 @@ set_tests_properties (${prefix}_Can_Calculate_Cube_Area PROPERTIES
 
 add_test(
     NAME ${prefix}_Cant_Calculate_Cube_Negative
-    COMMAND ${APPLICATION} Cube -2
+    COMMAND ${APPLICATION} -b -2
 )
 set_tests_properties (${prefix}_Cant_Calculate_Cube_Negative PROPERTIES
     PASS_REGULAR_EXPRESSION "Number can't be less then zero"
@@ -53,7 +53,7 @@ set_tests_properties (${prefix}_Cant_Calculate_Cube_Negative PROPERTIES
 
 add_test(
     NAME ${prefix}_can_Calculate_Cylinder_Area
-    COMMAND ${APPLICATION} Cylinder 2 3
+    COMMAND ${APPLICATION} -c 2 3
 )
 set_tests_properties (${prefix}_can_Calculate_Cylinder_Area PROPERTIES
     PASS_REGULAR_EXPRESSION "Area = 37,68"
@@ -61,7 +61,7 @@ set_tests_properties (${prefix}_can_Calculate_Cylinder_Area PROPERTIES
 
 add_test(
     NAME ${prefix}_Cant_Calculate_Cylinder_Negative
-    COMMAND ${APPLICATION} Cylinder -2 3
+    COMMAND ${APPLICATION} -c -2 3
 )
 set_tests_properties (${prefix}_Cant_Calculate_Cylinder_Negative PROPERTIES
     PASS_REGULAR_EXPRESSION "Number can't be less then zero"
@@ -69,7 +69,7 @@ set_tests_properties (${prefix}_Cant_Calculate_Cylinder_Negative PROPERTIES
 
 add_test(
     NAME ${prefix}_can_Calculate_Sphere_Area
-    COMMAND ${APPLICATION} Sphere 2
+    COMMAND ${APPLICATION} -s 2
 )
 set_tests_properties (${prefix}_can_Calculate_Sphere_Area PROPERTIES
     PASS_REGULAR_EXPRESSION "Area of sphere: 50,24"
@@ -77,7 +77,7 @@ set_tests_properties (${prefix}_can_Calculate_Sphere_Area PROPERTIES
 
 add_test(
     NAME ${prefix}_Cant_Calculate_Sphere_Negative
-    COMMAND ${APPLICATION} Sphere -2
+    COMMAND ${APPLICATION} -s -2
 )
 set_tests_properties (${prefix}_Cant_Calculate_Sphere_Negative PROPERTIES
     PASS_REGULAR_EXPRESSION "Number can't be less then zero"
