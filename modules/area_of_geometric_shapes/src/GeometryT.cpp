@@ -127,6 +127,7 @@ std::string GeometryT::operator()(int argc, const char** argv) {
             case 'n': {
                 Cone n(args.radius, args.height);
                 stream << n.areaCone();
+                break;
             }
         }
     }
