@@ -83,7 +83,7 @@ TEST(AreaOfGeometricShapes, Equal_Test_Cube) {
     // Arrange
     double h = 15.9;
     Cube cube1(h);
-    Cube coub2(cube1);
+    Cube cube2(cube1);
 
     // Act & Assert
     EXPECT_TRUE(cube1 == cube2);
@@ -91,7 +91,7 @@ TEST(AreaOfGeometricShapes, Equal_Test_Cube) {
 TEST(AreaOfGeometricShapes, Not_Equal_Test_Cube) {
     // Arrange
     double h = 15.9;
-    Cube cube1(2.1, 4.5);
+    Cube cube1(4.5);
     Cube cube2(h);
 
     // Act & Assert
