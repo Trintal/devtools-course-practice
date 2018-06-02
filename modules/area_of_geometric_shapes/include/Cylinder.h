@@ -9,7 +9,17 @@ class Cylinder {
     Cylinder(const double& _rad, const double& _h);
     Cylinder(const Cylinder& _c);
 
-	double areaCyl() const;
+    Cylinder& operator=(const Cylinder& _c);
+
+    double getRad() const;
+    double getH() const;
+    void setRad(const double _rad);
+    void setH(const double _h);
+
+    bool operator==(const Cylinder& _c) const;
+    bool operator!=(const Cylinder& _c) const;
+
+    double areaCyl() const;
  private:
     bool negativeNumbers(const double _rad, const double _h);
     double radius;

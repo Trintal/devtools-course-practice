@@ -113,27 +113,3 @@ TEST_F(GeometryTTest, Cant_Calculate_Sphere_Negative) {
 
     Assert("Number can't be less then zero");
 }
-
-TEST_F(GeometryTTest, Do_Print_Help_Corresponding_Flag) {
-    vector<string> args = { "-h" };
-
-    Act(args);
-
-    Assert("Usage:.*");
-}
-
-TEST_F(GeometryTTest, Is_Checking_Arguments) {
-    vector<string> args = { "chiki", "brrickii" };
-
-    Act(args);
-
-    Assert("Usage:.*");
-}
-
-TEST_F(GeometryTTest, Can_Detect_Wrong_Number_Format) {
-    vector<string> args = { "-s", "pi" };
-
-    Act(args);
-
-    Assert("Wrong number format!.*");
-}
