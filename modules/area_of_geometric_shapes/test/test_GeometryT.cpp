@@ -115,7 +115,7 @@ TEST_F(GeometryTTest, Cant_Calculate_Sphere_Negative) {
 }
 
 TEST_F(GeometryTTest, Is_Checking_Arguments) {
-    vector<string> args = { "abra", "cadabra" };
+    vector<string> args = { "zzzz", "qqqqqq" };
 
     Act(args);
 
@@ -147,4 +147,12 @@ TEST_F(GeometryTTest,
     Act(args);
 
     Assert("Usage:*");
+}
+
+TEST_F(GeometryTTest, Can_Detect_Wrong_Number_Format) {
+    vector<string> args = { "-s", "pi" };
+
+    Act(args);
+
+    Assert("Wrong number format!.*");
 }
