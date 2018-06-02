@@ -21,7 +21,7 @@ set_tests_properties (${prefix}_can_Print_Help_Without_Arguments PROPERTIES
 
 add_test(
     NAME ${prefix}_Can_Calculate_Cone_Area
-    COMMAND ${APPLICATION} -n 2 4
+    COMMAND ${APPLICATION} -n 2 3
 )
 set_tests_properties (${prefix}_Can_Calculate_Cone_Area PROPERTIES
     PASS_REGULAR_EXPRESSION "Area = 31.4"
