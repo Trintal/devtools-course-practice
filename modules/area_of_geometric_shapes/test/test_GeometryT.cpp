@@ -113,3 +113,38 @@ TEST_F(GeometryTTest, Cant_Calculate_Sphere_Negative) {
 
     Assert("Number can't be less then zero");
 }
+
+TEST_F(GeometryTTest, Is_Checking_Arguments) {
+    vector<string> args = { "abra", "cadabra" };
+
+    Act(args);
+
+    Assert("Usage:*");
+}
+
+TEST_F(GeometryTTest,
+	Wont_Calculate_Cylinder_Volume_Odd_Parameters) {
+	vector<string> args = { "-c", "1", "2", "12" };
+
+	Act(args);
+
+	Assert("Usage:*");
+}
+
+TEST_F(GeometryTTest,
+    Wont_Calculate_Cone_Volume_Odd_Parameters) {
+    vector<string> args = { "-n", "1", "2", "12" };
+
+    Act(args);
+
+    Assert("Usage:*");
+}
+
+TEST_F(VolumeCalculatorTest,
+    Wont_Calculate_Sphere_Volume_Odd_Parameters) {
+    vector<string> args = { "-s", "1", "2" };
+
+    Act(args);
+
+    Assert("Usage:*");
+}
