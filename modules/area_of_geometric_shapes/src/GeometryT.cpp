@@ -81,20 +81,28 @@ std::string GeometryT::operator()(int argc, const char** argv) {
 
     if (strcmp(args.figure, "Cone") == 0) {
         Cone cone(args.radius, args.height);
-        double res = cone.areaCone();
-        stream << "Area of cone: " << res;
+        if (cone.getRad() > 0 || cone.getL() > 0) {
+            double res = cone.areaCone();
+            stream << "Area of cone: " << res;
+        }
     } else if (strcmp(args.figure, "Cylinder") == 0) {
         Cylinder cylinder(args.radius, args.height);
-        double res = cylinder.areaCyl();
-        stream << "Area of cylinder: " << res;
+        if (cylinder.getRad() > 0 || cylinder.getH() > 0) {
+            double res = cylinder.areaCyl();
+            stream << "Area of cylinder: " << res;
+        }
     } else if (strcmp(args.figure, "Sphere") == 0) {
         Sphere sphere(args.radius);
-        double res = sphere.areaSph();
-        stream << "Area of sphere: " << res;
+        if (sphere.getRad() > 0) {
+            double res = sphere.areaSph();
+            stream << "Area of sphere: " << res;
+        }
     } else if (strcmp(args.figure, "Cube") == 0) {
         Cube cube(args.radius);
-        double res = cube.areaCube();
-        stream << "Area of cube: " << res;
+        if (cube.getH() > 0) {
+            double res = cube.areaCube();
+            stream << "Area of cube: " << res;
+        }
     }
 
     message_ = stream.str();
