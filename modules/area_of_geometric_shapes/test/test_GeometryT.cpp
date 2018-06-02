@@ -115,7 +115,7 @@ TEST_F(GeometryTTest, Cant_Calculate_Sphere_Negative) {
 }
 
 TEST_F(GeometryTTest, Is_Checking_Arguments) {
-    vector<string> args = { "zzzz", "qqqqqq" };
+    vector<string> args = { "-q", "2" };
 
     Act(args);
 

@@ -34,7 +34,7 @@ bool GeometryT::validateNumberOfArguments(int argc, const char** argv) {
         help(argv[0]);
         return false;
      }
-    if ((strspn(argv[1], "scbn") == 0)) {
+    if ((strspn(&argv[1][1], "scbn") == 0)) {
         help(argv[0]);
         return false;
     } else {
