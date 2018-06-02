@@ -50,11 +50,11 @@ TEST_F(GeometryTTest, Do_Print_Help_No_Arguments) {
 }
 
 TEST_F(GeometryTTest, Can_Calculate_Cone_Area) {
-    vector<string> args = { "-n", "2.1", "4.5" };
+    vector<string> args = { "-n", "2", "3" };
 
     Act(args);
 
-    Assert("Area = 43.5204");
+    Assert("Area = 31.4");
 }
 
 TEST_F(GeometryTTest, Cant_Calculate_Cone_Negative) {
@@ -87,7 +87,7 @@ TEST_F(GeometryTTest, Can_Calculate_Cylinder_Area) {
 
     Act(args);
 
-    Assert("Area = 37,68");
+    Assert("Area = 37.68");
 }
 
 TEST_F(GeometryTTest, Cant_Calculate_Cylinder_Negative) {
@@ -103,7 +103,7 @@ TEST_F(GeometryTTest, Can_Calculate_Sphere_Area) {
 
     Act(args);
 
-    Assert("Area = 50,24");
+    Assert("Area = 50.24");
 }
 
 TEST_F(GeometryTTest, Cant_Calculate_Sphere_Negative) {

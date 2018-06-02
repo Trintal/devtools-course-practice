@@ -16,15 +16,15 @@ add_test(
     COMMAND ${APPLICATION}
 )
 set_tests_properties (${prefix}_can_Print_Help_Without_Arguments PROPERTIES
-    PASS_REGULAR_EXPRESSION "Usage:*"
+    PASS_REGULAR_EXPRESSION "Please provide arguments in the following format:*"
     LABELS "${MODULE}")
 
 add_test(
     NAME ${prefix}_Can_Calculate_Cone_Area
-    COMMAND ${APPLICATION} -n 2.1 4.5
+    COMMAND ${APPLICATION} -n 2 4
 )
 set_tests_properties (${prefix}_Can_Calculate_Cone_Area PROPERTIES
-    PASS_REGULAR_EXPRESSION "Area = 43.5204"
+    PASS_REGULAR_EXPRESSION "Area = 31.4"
     LABELS "${MODULE}")
 
 add_test(
@@ -56,7 +56,7 @@ add_test(
     COMMAND ${APPLICATION} -c 2 3
 )
 set_tests_properties (${prefix}_can_Calculate_Cylinder_Area PROPERTIES
-    PASS_REGULAR_EXPRESSION "Area = 37,68"
+    PASS_REGULAR_EXPRESSION "Area = 37.68"
     LABELS "${MODULE}")
 
 add_test(
@@ -72,7 +72,7 @@ add_test(
     COMMAND ${APPLICATION} -s 2
 )
 set_tests_properties (${prefix}_can_Calculate_Sphere_Area PROPERTIES
-    PASS_REGULAR_EXPRESSION "Area of sphere: 50,24"
+    PASS_REGULAR_EXPRESSION "Area of sphere: 50.24"
     LABELS "${MODULE}")
 
 add_test(
