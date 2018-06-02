@@ -32,7 +32,7 @@ double Cone::getRad() const {
 }
 
 double Cone::getH() const {
-    return H;
+    return h;
 }
 
 void Cone::setRad(const double _rad) {
