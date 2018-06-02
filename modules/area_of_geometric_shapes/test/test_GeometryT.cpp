@@ -114,7 +114,7 @@ TEST_F(GeometryTTest, Cant_Calculate_Sphere_Negative) {
     Assert("Number can't be less then zero");
 }
 
-TEST_F(VolumeCalculatorTest, Do_Print_Help_Corresponding_Flag) {
+TEST_F(GeometryTTest, Do_Print_Help_Corresponding_Flag) {
     vector<string> args = { "-h" };
 
     Act(args);
@@ -122,7 +122,7 @@ TEST_F(VolumeCalculatorTest, Do_Print_Help_Corresponding_Flag) {
     Assert("Usage:.*");
 }
 
-TEST_F(VolumeCalculatorTest, Is_Checking_Arguments) {
+TEST_F(GeometryTTest, Is_Checking_Arguments) {
     vector<string> args = { "chiki", "brrickii" };
 
     Act(args);
@@ -130,7 +130,7 @@ TEST_F(VolumeCalculatorTest, Is_Checking_Arguments) {
     Assert("Usage:.*");
 }
 
-TEST_F(VolumeCalculatorTest, Can_Detect_Wrong_Number_Format) {
+TEST_F(GeometryTTest, Can_Detect_Wrong_Number_Format) {
     vector<string> args = { "-s", "pi" };
 
     Act(args);
