@@ -100,7 +100,7 @@ std::string GeometryT::operator()(int argc, const char** argv) {
             args.height = parseDouble(argv[2]);
             break;
         case 's':
-            args.height = parseDouble(argv[2]);
+            args.radius = parseDouble(argv[2]);
             break;
         default:
             args.radius = parseDouble(argv[2]);
