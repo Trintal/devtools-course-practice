@@ -34,7 +34,7 @@ bool GeometryT::validateNumberOfArguments(int argc, const char** argv) {
         help(argv[0]);
         return false;
      }
-    if ((strspn(&argv[1][1], "scb") == 0)) {
+    if ((strspn(&argv[1][1], "scbn") == 0)) {
         help(argv[0]);
         return false;
     } else {
@@ -71,20 +71,6 @@ double parseDouble(const char* arg) {
 
     return value;
 }
-
-//  int parseFigure(int argc, const char* argv) {
-//    if (strcmp(argv[1], "Cone") == 0) {
-//        return 1;
-//    } else if (strcmp(argv[1], "Cylinder") == 0) {
-//        return 2;
-//    } else if (strcmp(argv[1], "Sphere") == 0) {
-//        return 3;
-//    } else if (strcmp(argv[1], "Cube") == 0) {
-//        return 4;
-//    } else {
-//        throw std::string("Wrong figure format!");
-//    }
-//  }
 
 std::string GeometryT::operator()(int argc, const char** argv) {
     Arguments args;
