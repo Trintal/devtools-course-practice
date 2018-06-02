@@ -12,7 +12,7 @@ set_tests_properties (${prefix}_can_Run PROPERTIES
     LABELS "${MODULE}")
 
 add_test(
-    NAME ${prefix}_can_Print_Help_Without_Arguments
+    NAME ${prefix}_Do_Print_Help_No_Arguments
     COMMAND ${APPLICATION}
 )
 set_tests_properties (${prefix}_can_Print_Help_Without_Arguments PROPERTIES
@@ -20,11 +20,11 @@ set_tests_properties (${prefix}_can_Print_Help_Without_Arguments PROPERTIES
     LABELS "${MODULE}")
 
 add_test(
-    NAME ${prefix}_can_Calculate_Cone_Area
+    NAME ${prefix}_Can_Calculate_Cone_Area
     COMMAND ${APPLICATION} Cone 2.1 4.5
 )
 set_tests_properties (${prefix}_can_Calculate_Cone_Area PROPERTIES
-    PASS_REGULAR_EXPRESSION "Area of Cone: 43.5425"
+    PASS_REGULAR_EXPRESSION "Area of cone: 43.5425"
     LABELS "${MODULE}")
 
 add_test(
@@ -40,7 +40,7 @@ add_test(
     COMMAND ${APPLICATION} Cube 2
 )
 set_tests_properties (${prefix}_Can_Calculate_Cube_Area PROPERTIES
-    PASS_REGULAR_EXPRESSION "Area of Cube: 24"
+    PASS_REGULAR_EXPRESSION "Area of cube: 24"
     LABELS "${MODULE}")
 
 add_test(
@@ -56,7 +56,7 @@ add_test(
     COMMAND ${APPLICATION} Cylinder 2 3
 )
 set_tests_properties (${prefix}_can_Calculate_Cylinder_Area PROPERTIES
-    PASS_REGULAR_EXPRESSION "Area of Cylinder: 37,68"
+    PASS_REGULAR_EXPRESSION "Area of cylinder: 37,68"
     LABELS "${MODULE}")
 
 add_test(
@@ -72,7 +72,7 @@ add_test(
     COMMAND ${APPLICATION} Sphere 2
 )
 set_tests_properties (${prefix}_can_Calculate_Sphere_Area PROPERTIES
-    PASS_REGULAR_EXPRESSION "Area of Sphere: 50,24"
+    PASS_REGULAR_EXPRESSION "Area of sphere: 50,24"
     LABELS "${MODULE}")
 
 add_test(

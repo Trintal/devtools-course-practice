@@ -21,7 +21,7 @@ void GeometryT::help(const char* appname, const char* message) {
         "Please provide arguments in the following format : \n\n"
 
         " $" + appname +
-        "Name of figure <Cone/Cube/Cylinder/Sphere>" +
+        " Name of figure <Cone/Cube/Cylinder/Sphere>" +
         "<radius> <height> for Cylinder and Cone \n" +
         "Or <radius> for Sphere and Cube. \n\n" +
 
