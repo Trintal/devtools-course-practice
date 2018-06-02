@@ -16,7 +16,7 @@ add_test(
     COMMAND ${APPLICATION}
 )
 set_tests_properties (${prefix}_can_Print_Help_Without_Arguments PROPERTIES
-    PASS_REGULAR_EXPRESSION "Please provide arguments in the following format:*"
+    PASS_REGULAR_EXPRESSION "Usage:*"
     LABELS "${MODULE}")
 
 add_test(
