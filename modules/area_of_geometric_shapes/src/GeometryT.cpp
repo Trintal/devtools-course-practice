@@ -23,7 +23,7 @@ void GeometryT::help(const char* appname, const char* message) {
         "\t-s\tsphere, requires radius\n"
         "\t-b\tbox(or cube) requires width\n"
         "\t-c\tcylinder, requires radius and height\n"
-		"\t-n\tcone, requires radius and height\n"
+        "\t-n\tcone, requires radius and height\n"
         "Examples:\n"
         "\tarea -s 5.1\n"
         "\tarea -c 3.4 12.0";
@@ -37,8 +37,7 @@ bool GeometryT::validateNumberOfArguments(int argc, const char** argv) {
     if ((strspn(&argv[1][1], "scb") == 0)) {
         help(argv[0]);
         return false;
-    }
-    else {
+    } else {
         switch (argv[1][1]) {
         case 'c':
         if (argc != 4) {
@@ -88,7 +87,7 @@ std::string GeometryT::operator()(int argc, const char** argv) {
     if (!validateNumberOfArguments(argc, argv)) {
         return message_;
     }
-	
+
     try {
         switch (argv[1][1]) {
         case 'b':
