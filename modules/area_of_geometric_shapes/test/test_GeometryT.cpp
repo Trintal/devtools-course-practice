@@ -54,7 +54,7 @@ TEST_F(GeometryTTest, Can_Calculate_Cone_Area) {
 
     Act(args);
 
-    Assert("Area = 43.5204);
+    Assert("Area = 43.5204");
 }
 
 TEST_F(GeometryTTest, Cant_Calculate_Cone_Negative) {
