@@ -23,7 +23,7 @@ add_test(
     NAME ${prefix}_Can_Calculate_Cone_Area
     COMMAND ${APPLICATION} Cone 2.1 4.5
 )
-set_tests_properties (${prefix}_can_Calculate_Cone_Area PROPERTIES
+set_tests_properties (${prefix}_Can_Calculate_Cone_Area PROPERTIES
     PASS_REGULAR_EXPRESSION "Area of cone: 43.5425"
     LABELS "${MODULE}")
 
