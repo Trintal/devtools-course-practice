@@ -123,12 +123,12 @@ TEST_F(GeometryTTest, Is_Checking_Arguments) {
 }
 
 TEST_F(GeometryTTest,
-	Wont_Calculate_Cylinder_Volume_Odd_Parameters) {
-	vector<string> args = { "-c", "1", "2", "12" };
+    Wont_Calculate_Cylinder_Volume_Odd_Parameters) {
+    vector<string> args = { "-c", "1", "2", "12" };
 
-	Act(args);
+    Act(args);
 
-	Assert("Usage:*");
+    Assert("Usage:*");
 }
 
 TEST_F(GeometryTTest,
@@ -140,7 +140,7 @@ TEST_F(GeometryTTest,
     Assert("Usage:*");
 }
 
-TEST_F(VolumeCalculatorTest,
+TEST_F(GeometryTTest,
     Wont_Calculate_Sphere_Volume_Odd_Parameters) {
     vector<string> args = { "-s", "1", "2" };
 
