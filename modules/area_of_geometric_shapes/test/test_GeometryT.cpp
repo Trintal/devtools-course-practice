@@ -54,7 +54,7 @@ TEST_F(GeometryTTest, Can_Calculate_Cone_Area) {
 
     Act(args);
 
-    Assert("Area of cone: 43.5425");
+    Assert("Area of cone: 43.5425*");
 }
 
 TEST_F(GeometryTTest, Cant_Calculate_Cone_Negative) {
@@ -62,7 +62,7 @@ TEST_F(GeometryTTest, Cant_Calculate_Cone_Negative) {
 
     Act(args);
 
-    Assert("Number can't be less then zero");
+    Assert("Number can't be less then zero*");
 }
 
 
@@ -71,7 +71,7 @@ TEST_F(GeometryTTest, Can_Calculate_Cube_Area) {
 
     Act(args);
 
-    Assert("Area of cube: 24");
+    Assert("Area of cube: 24*");
 }
 
 TEST_F(GeometryTTest, Cant_Calculate_Cube_Negative) {
@@ -79,7 +79,7 @@ TEST_F(GeometryTTest, Cant_Calculate_Cube_Negative) {
 
     Act(args);
 
-    Assert("Number can't be less then zero");
+    Assert("Number can't be less then zero*");
 }
 
 TEST_F(GeometryTTest, Can_Calculate_Cylinder_Area) {
@@ -87,7 +87,7 @@ TEST_F(GeometryTTest, Can_Calculate_Cylinder_Area) {
 
     Act(args);
 
-    Assert("Area of cylinder: 37,68");
+    Assert("Area of cylinder: 37,68*");
 }
 
 TEST_F(GeometryTTest, Cant_Calculate_Cylinder_Negative) {
@@ -95,7 +95,7 @@ TEST_F(GeometryTTest, Cant_Calculate_Cylinder_Negative) {
 
     Act(args);
 
-    Assert("Number can't be less then zero");
+    Assert("Number can't be less then zero*");
 }
 
 TEST_F(GeometryTTest, Can_Calculate_Sphere_Area) {
@@ -103,7 +103,7 @@ TEST_F(GeometryTTest, Can_Calculate_Sphere_Area) {
 
     Act(args);
 
-    Assert("Area of sphere: 50,24");
+    Assert("Area of sphere: 50,24*");
 }
 
 TEST_F(GeometryTTest, Cant_Calculate_Sphere_Negative) {
@@ -111,5 +111,5 @@ TEST_F(GeometryTTest, Cant_Calculate_Sphere_Negative) {
 
     Act(args);
 
-    Assert("Number can't be less then zero");
+    Assert("Number can't be less then zero*");
 }
