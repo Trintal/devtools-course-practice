@@ -3,6 +3,8 @@
 #include "include/Cone.h"
 
 #include <string>
+#include <sstream>
+
 
 const double pi = 3.14;
 
